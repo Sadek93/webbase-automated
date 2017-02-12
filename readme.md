@@ -10,7 +10,8 @@ This is a Grunt taskmanaged web project base with the following features
 ## Installation
 1. Install [npm](https://www.npmjs.com/)
 2. Install [Grunt ](http://gruntjs.com), following the [getting started ](http://gruntjs.com/getting-started) instructions
-3. Open the console, change to the projects working directory and install the projects dependencies with ```npm install```
+3. Open the console, change to the projects working directory and install the projects dev dependencies with ```npm install --only=dev```
+4. Still in the working directory ```npm install grunt-postcss pixrem autoprefixer cssnano``` to get ```grunt-postcss``` working.
 
 ## Usage
 

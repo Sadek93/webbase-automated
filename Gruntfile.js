@@ -53,12 +53,14 @@ module.exports = function(grunt) {
         connect: {
             dev: {
                 options: {
-                    base: config.target.dev.html
+                    base: [ targetbase + distDev, config.target.dev.html ],
+                    open: true
                 }
             },
             prod: {
                 options: {
-                    base: config.target.prod.html,
+                    base: [ targetbase + distProd, config.target.prod.html ],
+                    open: true,
                     keepalive: true
                 }
             }
@@ -218,7 +220,7 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true
                 },
-                files: [ targetbase + distDev + '/**/*']
+                files: [targetbase + distDev + '/**/*']
             }
         }
     });
@@ -237,7 +239,7 @@ module.exports = function(grunt) {
     grunt.registerTask('prod', ['connect:prod']);
     // Starts a local server with the dev build as its base and watches for changes
     grunt.registerTask('dev-server', ['connect:dev', 'watch']);
-    grunt.registerTask('dev', function(){
-      grunt.task.run('build-dev', 'dev-server');
+    grunt.registerTask('dev', function() {
+        grunt.task.run('build-dev', 'dev-server');
     });
 };

@@ -240,7 +240,4 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', function(){
       grunt.task.run('build-dev', 'dev-server');
     });
-    // watches and lints the gruntfile (just for developing purposes)
-    // grunt dev watches the gruntfile as well
-    grunt.registerTask('gruntfile-dev', ['watch:gruntfile']);
 };
